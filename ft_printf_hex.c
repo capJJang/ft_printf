@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_x.c                                      :+:      :+:    :+:   */
+/*   ft_printf_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:33:35 by segan             #+#    #+#             */
-/*   Updated: 2022/09/13 14:59:37 by segan            ###   ########.fr       */
+/*   Updated: 2022/09/14 13:57:27 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_printf_x(int n, int *sum)
+void	ft_printf_lowerx(unsigned int n, int *sum)
 {
-	while (n)
+	if (n < 16)
 	{
 		ft_putchar_fd("0123456789abcdef"[n % 16], 1);
-		n /= 16;
+		(*sum)++;
+	}
+	else if (n >= 16)
+	{
+		ft_printf_lowerx(n / 16, sum);
+		ft_putchar_fd("0123456789abcdef"[n % 16], 1);
 		(*sum)++;
 	}
 }
 
-void	ft_printf_X(int n, int *sum)
+void	ft_printf_upperx(unsigned int n, int *sum)
 {
-	while (n)
+	if (n < 16)
 	{
 		ft_putchar_fd("0123456789ABCDEF"[n % 16], 1);
-		n /= 16;
+		(*sum)++;
+	}
+	else if (n >= 16)
+	{
+		ft_printf_upperx(n / 16, sum);
+		ft_putchar_fd("0123456789ABCDEF"[n % 16], 1);
 		(*sum)++;
 	}
 }

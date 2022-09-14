@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 02:09:15 by segan             #+#    #+#             */
-/*   Updated: 2022/09/13 18:00:44 by segan            ###   ########.fr       */
+/*   Updated: 2022/09/14 13:59:19 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ void	check_format_specifier(const char *format, va_list ap, int *sum)
 	}
 	else if (*format == 's')
 		ft_printf_s(va_arg(ap, const char *), sum);
-	// else if (*format == 'P')
-	// 	write();
+	else if (*format == 'p')
+		ft_printf_p(va_arg(ap, long), sum);
 	else if (*format == 'd' || *format == 'i')
 		ft_printf_di(va_arg(ap, int), sum);
 	else if (*format == 'u')
 		ft_printf_u(va_arg(ap, int), sum);
 	else if (*format == 'x')
-		ft_printf_x(va_arg(ap, int), sum);
+		ft_printf_lowerx(va_arg(ap, int), sum);
 	else if (*format == 'X')
-		ft_printf_X(va_arg(ap, int), sum);
+		ft_printf_upperx(va_arg(ap, int), sum);
 	else if (*format == '%')
 	{
 		ft_putchar_fd('%', 1);
@@ -41,9 +41,9 @@ void	check_format_specifier(const char *format, va_list ap, int *sum)
 int	ft_printf(const char *format, ...)
 {
 	int		state;
-	int 	sum;
+	int		sum;
 	va_list	ap;
-	
+
 	state = 0;
 	sum = 0;
 	va_start(ap, format);
@@ -67,9 +67,16 @@ int	ft_printf(const char *format, ...)
 	return (sum);
 }
 
+/*
 #include <stdio.h>
 
 int main(void)
 {
-	printf("%x", -1);
+	char a;
+	char *ptr = NULL;
+
+	//printf("%lu\n", ptr);
+	ft_printf("%p\n", ptr);
+	printf("%p", ptr);
 }
+*/
