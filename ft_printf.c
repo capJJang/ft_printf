@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 02:09:15 by segan             #+#    #+#             */
-/*   Updated: 2022/09/14 13:59:19 by segan            ###   ########.fr       */
+/*   Updated: 2022/09/15 13:57:56 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,16 +67,14 @@ int	ft_printf(const char *format, ...)
 	return (sum);
 }
 
-/*
 #include <stdio.h>
 
 int main(void)
 {
-	char a;
+	//char a;
 	char *ptr = NULL;
 
 	//printf("%lu\n", ptr);
 	ft_printf("%p\n", ptr);
 	printf("%p", ptr);
 }
-*/
