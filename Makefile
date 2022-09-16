@@ -6,7 +6,7 @@
 #    By: segan <segan@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/14 14:09:42 by segan             #+#    #+#              #
-#    Updated: 2022/09/15 14:01:38 by segan            ###   ########.fr        #
+#    Updated: 2022/09/16 16:53:13 by segan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,29 +21,22 @@ ARFLAGS = -rcs
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_printf_di.c ft_printf_hex.c ft_printf_p.c ft_printf_s.c ft_printf_u.c\
-		ft_printf.c
+		ft_printf.c ft_itoa.c ft_putchar_fd.c ft_putstr_fd.c ft_strlen.c
 
 OBJS = $(SRCS:.c=.o)
-
-LIBFTPATH = ../libft
-
-LIBFTNAME = ft
 
 all : $(NAME)
 
 %.o : %.c
-	make -C $(LIBFTPATH)
-	$(CC) $(CFLAGS) -c $(SRCS) -L$(LIBFTPATH) -l$(LIBFTNAME)
+	$(CC) $(CFLAGS) -c $(SRCS)
 
 $(NAME) : $(OBJS)
 		$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 clean :
-	make clean -C $(LIBFTPATH)
 	rm -f $(OBJS)
 
 fclean :
-	make fclean -C $(LIBFTPATH)
 	make clean
 	rm -f $(NAME)
 

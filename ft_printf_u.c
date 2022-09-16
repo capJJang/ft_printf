@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:09:24 by segan             #+#    #+#             */
-/*   Updated: 2022/09/13 09:34:15 by segan            ###   ########.fr       */
+/*   Updated: 2022/09/16 17:05:38 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	unsignedintlen(unsigned int n)
 	size_t	len;
 
 	len = 0;
+	if (n == 0)
+		len++;
 	while (n != 0)
 	{
 		n /= 10;
