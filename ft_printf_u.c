@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:09:24 by segan             #+#    #+#             */
-/*   Updated: 2022/09/16 17:05:38 by segan            ###   ########.fr       */
+/*   Updated: 2022/09/18 19:03:15 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void	ft_printf_u(unsigned int n, int *sum)
 	char	*num;
 
 	num = ft_uitoa(n);
+	if (num == NULL)
+		return ;
 	ft_putstr_fd(num, 1);
 	*sum += ft_strlen(num);
 	free(num);
