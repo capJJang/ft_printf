@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 10:00:39 by segan             #+#    #+#             */
-/*   Updated: 2022/09/16 16:51:28 by segan            ###   ########.fr       */
+/*   Updated: 2022/09/18 15:49:02 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	ft_printf_lowerx(unsigned int n, int *sum);
 void	ft_printf_upperx(unsigned int n, int *sum);
 void	ft_printf_p(unsigned long n, int *sum);
 void	ft_printf_hex_unsignedlong(unsigned long n, int *sum);
+size_t	unsignedintlen(unsigned int n);
+char	*ft_uitoa(unsigned int n);
 size_t	ft_strlen(const char *s);
 char	*ft_itoa(int n);
 void	ft_putchar_fd(char c, int fd);
