@@ -6,7 +6,7 @@
 /*   By: segan <segan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 02:09:15 by segan             #+#    #+#             */
-/*   Updated: 2022/09/18 16:47:10 by segan            ###   ########.fr       */
+/*   Updated: 2022/09/22 18:28:18 by segan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,3 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (sum);
 }
-
-/*
-int main(void)
-{
-	ft_printf("%x", 1234);
-}
-*/
